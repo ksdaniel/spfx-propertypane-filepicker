@@ -1,7 +1,7 @@
 {
   "name": "spfx-propertypane-filepicker",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "main": "lib/index.js",
   "engines": {
     "node": ">=0.10.0"
@@ -39,5 +39,26 @@
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
     "ajv": "~5.2.2"
-  }
+  },
+  "description": "A file picker for SPFX webparts property panes",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksdaniel/spfx-propertypane-filepicker.git"
+  },
+  "keywords": [
+    "spfx",
+    "webparts",
+    "filepicker",
+    "property",
+    "pane"
+  ],
+  "author": "Daniel Kloyber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksdaniel/spfx-propertypane-filepicker/issues"
+  },
+  "homepage": "https://github.com/ksdaniel/spfx-propertypane-filepicker#readme"
 }
