@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-propertypane-filepicker-client-side-solution",
+    "id": "5aede1fc-044b-4a5d-a6af-854fe59653bc",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-propertypane-filepicker.sppkg"
+  }
+}
