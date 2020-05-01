@@ -10,7 +10,7 @@ import { IPropertyPaneFilePickerInternalProps } from './IPropertyPaneFilePickerI
 
 import { FilePicker, IFilePickerProps, IFilePickerResult } from '@pnp/spfx-controls-react/lib/FilePicker';
 
-export class PropertyPaneFilePicker implements IPropertyPaneField<IPropertyPaneFilePickerProps> {
+export class PropertyPaneFilePickerBuilder implements IPropertyPaneField<IPropertyPaneFilePickerProps> {
 
     public type: PropertyPaneFieldType = PropertyPaneFieldType.Custom;
     public targetProperty: string;
@@ -18,7 +18,7 @@ export class PropertyPaneFilePicker implements IPropertyPaneField<IPropertyPaneF
 
     private elem: HTMLElement;
 
-    constructor(targetProperty: string, properties: IPropertyPaneFilePickerProps) {
+    public constructor(targetProperty: string, properties: IPropertyPaneFilePickerProps) {
 
         this.targetProperty = targetProperty;
         
@@ -29,6 +29,7 @@ export class PropertyPaneFilePicker implements IPropertyPaneField<IPropertyPaneF
             label: properties.label,
             onPropertyChange: properties.onPropertyChange,
             disabled: properties.disabled,
+            accepts : properties.accepts
         };
     }
 
@@ -53,7 +54,7 @@ export class PropertyPaneFilePicker implements IPropertyPaneField<IPropertyPaneF
             onSave: this.onSave.bind(this),
             context: this.properties.webpartContext,
             buttonLabel: this.properties.label,
-            accepts: [".gif", ".jpg", ".jpeg", ".bmp", ".dib", ".tif", ".tiff", ".ico", ".png", ".jxr", ".svg"]
+            accepts: this.properties.accepts
         });
 
         ReactDom.render(element, elem);
@@ -64,6 +65,10 @@ export class PropertyPaneFilePicker implements IPropertyPaneField<IPropertyPaneF
         this.properties.onPropertyChange(filePickerResult)
         
       }
+}
 
+export function PropertyPaneFilePicker(targetProperty : string, properties: IPropertyPaneFilePickerProps) : IPropertyPaneField<IPropertyPaneFilePickerProps>{
 
+    return new PropertyPaneFilePickerBuilder(targetProperty, properties);
+    
 }

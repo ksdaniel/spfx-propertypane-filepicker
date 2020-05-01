@@ -9,4 +9,5 @@ export interface IPropertyPaneFilePickerProps {
   onPropertyChange: (filePickerResult: IFilePickerResult) => void;
   disabled?: boolean;
   webpartContext : WebPartContext;
+  accepts: string[];
 }

@@ -56,11 +56,12 @@ export default class FilePickerWebpartTestWebPart extends BaseClientSideWebPart 
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                new PropertyPaneFilePicker('description', {
-                  key: "Test123",
+                PropertyPaneFilePicker('description', {
+                  key: "filepicker1",
                   label: strings.DescriptionFieldLabel,
                   webpartContext: this.context,
-                  onPropertyChange: this.onFileChange.bind(this)  
+                  onPropertyChange: this.onFileChange.bind(this), 
+                  accepts : [".gif", ".jpg", ".jpeg", ".bmp", ".dib", ".tif", ".tiff", ".ico", ".png", ".jxr", ".svg"]
                 })
               ]
             }
