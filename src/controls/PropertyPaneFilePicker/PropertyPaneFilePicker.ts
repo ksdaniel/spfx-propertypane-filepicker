@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import {
     IPropertyPaneField,
-    PropertyPaneFieldType
+    PropertyPaneFieldType,
+    PropertyPaneToggle
 } from '@microsoft/sp-property-pane';
 
 import { IPropertyPaneFilePickerProps } from './IPropertyPaneFilePickerProps';
@@ -54,7 +55,8 @@ export class PropertyPaneFilePickerBuilder implements IPropertyPaneField<IProper
             onSave: this.onSave.bind(this),
             context: this.properties.webpartContext,
             buttonLabel: this.properties.label,
-            accepts: this.properties.accepts
+            accepts: this.properties.accepts, 
+            disabled : this.properties.disabled ? this.properties.disabled : false
         });
 
         ReactDom.render(element, elem);
@@ -62,7 +64,7 @@ export class PropertyPaneFilePickerBuilder implements IPropertyPaneField<IProper
 
     private onSave(filePickerResult: IFilePickerResult) : void {
 
-        this.properties.onPropertyChange(filePickerResult)
+        this.properties.onPropertyChange(filePickerResult);
         
       }
 }

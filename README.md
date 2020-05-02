@@ -9,7 +9,7 @@ Still in development.
 
 ```javascript
 
-import {PropertyPaneFilePicker}  from '../../controls/PropertyPaneFilePicker/PropertyPaneFilePicker'
+import {PropertyPaneFilePicker}  from 'spfx-propertypane-filepicker';
 
 import {IFilePickerResult } from '@pnp/spfx-controls-react/lib/FilePicker';
 
